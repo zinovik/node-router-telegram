@@ -1,0 +1,52 @@
+{
+  "name": "node-tplink-telegram",
+  "version": "0.0.1",
+  "description": "node tplink telegram",
+  "main": "lib/index.js",
+  "bin": {
+    "node-tplink-telegram": "./lib/index.js"
+  },
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "test": "jest --config jestconfig.json --collectCoverage",
+    "format": "prettier --write \"src/**/*.ts*\" \"test*/**/*.ts*\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint"
+  },
+  "engines": {
+    "node": ">= 12",
+    "npm": ">= 6.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zinovik/node-tplink-telegram.git"
+  },
+  "author": "Max Zinovik",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/zinovik/node-tplink-telegram/issues"
+  },
+  "homepage": "https://github.com/zinovik/node-tplink-telegram#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typemoq": "^2.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "ts-node": "^8.5.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
