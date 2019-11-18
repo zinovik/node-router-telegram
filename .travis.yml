@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - 12
+script:
+  - npm run lint
+  - npm run test
+deploy:
+  provider: npm
+  email: zinovik@gmail.com
+  on:
+    repo: zinovik/node-router-telegram
+    branch: master
+  skip_cleanup: true
+  api_key:
+    secure: PJLrZdx7kSnf0MynshPwDpbm97JauYHQvBqHQkX7JTJ4Z1dZFs2fjiMAOmxXTz2rNy82ybelLoUWDutvCNH2NgMMtfhY53C+TRgTspW8J7BhKp43jDyFhQZFguwgav2QJWaKKuJWS/UAfoGcbwXSwiYNz9wSdqd85eOWWfWMXVioUxPAKm2bvoIky7qG3qJho8M2JhvmnL7B2oVuCtr0zU5gtALV0cXo6gMmCRRlXBTCCTTamBwhW8x+1JsEs4B0Je2H+tbo/dKLsbvwFmlJAtWgscWcJ3PRfaNoIpHYVmOt1k4IS2AkIbJ/5NwZTj2t0PGIHtxGmJE0mgc/3n55MWJgieuc2JvNSSRHVXsKmW3m7A07G9KFMBAdG1fNzxNl1ectbgA7YTWStfEeNm+J8neIetgDv4tm8SwCK2jlXiL+pOQTg/vJN0GrteCne/lHa6uh5X+G756OC3KYDtCk8fk7y7k7JiZl6W3f/WNsX+/cxkTusGMeBJi+cFJTZQ7xLnS5USDCSLaLnZJhYWc8vECxxujBzFsVkmFSe5S35tAuGtxJJwawLt0W5ILtDwktT2xmWOdg4V0lJZW58dMQ/STtlu2wxuMG1xRCLyGF8KPedDtFzDdwyOGMaQN7mHr7NoQBut6oJkukoMA6zc93lO1NElGX5sFs/XlaZp5usY4=

@@ -12,6 +12,7 @@ export class TelegramService implements ITelegramService {
   async sendMessage({ text, chatId }: { text: string; chatId: number }): Promise<void> {
     const message = {
       text,
+      // eslint-disable-next-line @typescript-eslint/camelcase
       chat_id: chatId,
     };
 

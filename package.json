@@ -1,6 +1,6 @@
 {
   "name": "node-router-telegram",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node router telegram",
   "main": "lib/index.js",
   "bin": {
@@ -12,9 +12,9 @@
     "start": "ts-node src/index.ts",
     "test": "jest --config jestconfig.json --collectCoverage",
     "format": "prettier --write \"src/**/*.ts*\" \"test*/**/*.ts*\"",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint": "eslint . --ext .ts",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test",
+    "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint"
   },
   "engines": {
@@ -34,17 +34,19 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.8",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
+    "ts-node": "^8.5.2",
     "typemoq": "^2.1.0",
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "ts-node": "^8.5.2"
+    "axios": "^0.19.0"
   },
   "files": [
     "lib/**/*"

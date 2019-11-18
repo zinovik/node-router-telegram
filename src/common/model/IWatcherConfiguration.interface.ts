@@ -3,4 +3,5 @@ export interface IWatcherConfiguration {
   password: string;
   token: string;
   chatId: number;
+  interval: number;
 }

@@ -1,11 +1,11 @@
-import { IMock, Mock, It, Times } from "typemoq";
+import { IMock, Mock } from 'typemoq';
 
-import { Watcher } from "../../../src/watcher/Watcher";
-import { IRouterService } from "../../../src/router/IRouterService.interface";
-import { IDatabaseService } from "../../../src/database/IDatabaseService.interface";
-import { ITelegramService } from "../../../src/telegram/ITelegramService.interface";
+import { Watcher } from '../../../src/watcher/Watcher';
+import { IRouterService } from '../../../src/router/IRouterService.interface';
+import { IDatabaseService } from '../../../src/database/IDatabaseService.interface';
+import { ITelegramService } from '../../../src/telegram/ITelegramService.interface';
 
-describe("Watcher", () => {
+describe('Watcher', () => {
   let routerServiceMock: IMock<IRouterService>;
   let databaseService: IMock<IDatabaseService>;
   let telegramServiceMock: IMock<ITelegramService>;
@@ -18,18 +18,14 @@ describe("Watcher", () => {
     telegramServiceMock = Mock.ofType<ITelegramService>();
 
     const configuration = {
-      login: "test-login",
-      password: "test-password",
-      token: "test-token",
-      chatId: 0
+      login: 'test-login',
+      password: 'test-password',
+      token: 'test-token',
+      chatId: 0,
+      interval: 10 * 1000,
     };
 
-    watcher = new Watcher(
-      configuration,
-      routerServiceMock.object,
-      databaseService.object,
-      telegramServiceMock.object
-    );
+    watcher = new Watcher(configuration, routerServiceMock.object, databaseService.object, telegramServiceMock.object);
   });
 
   afterEach(() => {
@@ -38,7 +34,7 @@ describe("Watcher", () => {
     telegramServiceMock.verifyAll();
   });
 
-  it("Should work", async () => {
+  it('Should work', async () => {
     // Arrange
 
     // Act
