@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- '12.6.0'
+  - 12.6.0
 script:
-- npm run lint
-- npm run test
+  - npm run lint
+  - npm run test
 deploy:
   provider: npm
   email: zinovik@gmail.com
@@ -12,4 +12,4 @@ deploy:
     branch: master
   skip_cleanup: true
   api_key:
-    secure: Ad3oNFK16EVxBn38xXX0r0uBs0VN+CnPxKcelJxoPAWC7admxaLiALkXacXRfQK8tsRUsnxTNQEV5N/KwxpH4Dy8B1VOrwp+bYelnb+dKZMCLRl5/+eRHF6gE+YSVnHi02VRx3HPrAcNRh+q218hitdtUO5s9JOqbeOyfih+KumEFrsbdrsLBFWmAU2WzKoqAhFL8T+Dp1PkNmTfkCvd3W0K30BhLSHoPIKr3PgXp9kTdRx/bsSPgVaxmh7ScUjrHqB/c0CboFbCukgIuzi2FqirE4wqvAcUbZYk0gg6Tte7wbdeMQyyN0WkXqAShrjvPvWhiwBDRM62M0NNJVqVaPEYkRZ1sQ3dAZfIBEd2p3DOO3fE/4/mCNqqjJ11fsCZRLXB4EVzZ7eSPFXUsiS5xGOe0GRqLcK8tumL7Wr5lThvr3OzbqU2emWdmig3DtXN6+Tr7xDLsUFgMX3WUrkYSnGjEUzXeCXp68GE/AvQEmSO8uuy6dbkD/jNWAi0ojb4BTfw5a6eQDEppuBHFMA3botf3Cu5uJEveIMfOxkd39EPzxrAX0yVQ4+fGEdI+k5r+dp2232fRbLp15U0e1JzAz0g3UtB6xZvIy1EuflHT7E9q2u8xCSemoQWap/tYmt4xihtobaN5Iecbh2+5vtEHr0X0t8n11sNjHhEbBrZ2gc=
+    secure: bBn21iRqjACLj9wq8rdDDjutTLiU+euulqibUDGgIv5y5dKjadCZUFH5jkd5RbiwsD0DCFWz/v3yAAssZ68CG78ofwF1JsB9VQuwSHk/iF61xIYUSSUZOO8wlkIC+Lhi6/Cpj7+b+jL/A5YuUKgYzlp4qrFFkltOwTZCYI105IBVeb7PtXyXr9VztvGOqsD1GKRfGcBwwficUBWsdS16VqyNHJCI6TU2wUi83K6x7MEbWyTBcSBrSNIeybAQcPNGAFtHyALZ1PTj5wy5x6bYRJRCzL/ZD10h4ArnqQNH2uejbfr5pVp2TGi+iNTtix+5PKJb4/gTstYP339XotMP0kJbfwuoigU8LEDbjKkaWaqQvKUPsdTRaVdJJdpxW8bDvrouECCAbTObzeVT00Djf2pCEY3bNhrwmWTXnu1z2gqmUPhZJWwOz+g05k1i5OFR98SG7bUeaasgtDiJJFdYyYtPsbm41h0BsfixWbhizCy5D7M2CThcfKAApM9BAPxAUxwDz5wpxtpfXmWieknU8pd0NLPMr8NzAEmK25KIV0yO0lPSfXvyO0PWhBe48KlISzZ0M6ztFQpasoKG8uMXSmn6BXP8Fg87PUCYAIfyX9yF7RfAd8oSfmsy2K3YKRQPS34etPWzHyFEzWywC24NC/Itk3k/sCDLHw+CLmVYEKo=
