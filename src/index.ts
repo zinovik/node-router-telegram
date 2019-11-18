@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Watcher } from "./watcher/Watcher";
-import { TplinkService } from "./tplink/Tplink.service";
+import { TplinkService } from "./router/Tplink.service";
 import { MemoryService } from "./database/Memory.service";
 import { TelegramService } from "./telegram/Telegram.service";
 

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-import { ITplinkService } from "./ITplinkService.interface";
+import { IRouterService } from "./IRouterService.interface";
 
-export class TplinkService implements ITplinkService {
+export class TplinkService implements IRouterService {
   constructor(
     private readonly login: string,
     private readonly password: string

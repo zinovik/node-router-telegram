@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/zinovik/node-tplink-telegram.svg?branch=master)](https://travis-ci.org/zinovik/node-tplink-telegram)
+[![Build Status](https://travis-ci.org/zinovik/node-router-telegram.svg?branch=master)](https://travis-ci.org/zinovik/node-router-telegram)
 
-# node-tplink-telegram
+# node-router-telegram
 
 ```bash
- npx node-tplink-telegram LOGIN PASSWORD TELEGRAM_TOKEN TELEGRAM_CHAT_ID
+ npx node-router-telegram LOGIN PASSWORD TELEGRAM_TOKEN TELEGRAM_CHAT_ID
 ```

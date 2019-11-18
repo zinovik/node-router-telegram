@@ -1,10 +1,10 @@
 {
-  "name": "node-tplink-telegram",
+  "name": "node-router-telegram",
   "version": "0.0.1",
-  "description": "node tplink telegram",
+  "description": "node router telegram",
   "main": "lib/index.js",
   "bin": {
-    "node-tplink-telegram": "./lib/index.js"
+    "node-router-telegram": "./lib/index.js"
   },
   "types": "lib/index.d.ts",
   "scripts": {
@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zinovik/node-tplink-telegram.git"
+    "url": "git+https://github.com/zinovik/node-router-telegram.git"
   },
   "author": "Max Zinovik",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/zinovik/node-tplink-telegram/issues"
+    "url": "https://github.com/zinovik/node-router-telegram/issues"
   },
-  "homepage": "https://github.com/zinovik/node-tplink-telegram#readme",
+  "homepage": "https://github.com/zinovik/node-router-telegram#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.8",

@@ -1,3 +1,3 @@
-export interface ITplinkService {
+export interface IRouterService {
   getDevices(): Promise<string[]>;
 }

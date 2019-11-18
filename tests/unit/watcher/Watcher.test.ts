@@ -1,41 +1,44 @@
-import { IMock, Mock, It, Times } from 'typemoq';
+import { IMock, Mock, It, Times } from "typemoq";
 
-import { Watcher } from '../../../src/watcher/Watcher';
-import { IServerService } from '../../../src/server/IServerService.interface';
-import { ITplinkService } from '../../../src/tplink/ITplinkService.interface';
-import { ITelegramService } from '../../../src/telegram/ITelegramService.interface';
-import { IFileSystemService } from '../../../src/file-system/IFileSystemService.interface';
+import { Watcher } from "../../../src/watcher/Watcher";
+import { IRouterService } from "../../../src/router/IRouterService.interface";
+import { IDatabaseService } from "../../../src/database/IDatabaseService.interface";
+import { ITelegramService } from "../../../src/telegram/ITelegramService.interface";
 
-describe('Spy', () => {
-  let serverServiceMock: IMock<IServerService>;
-  let tplinkService: IMock<ITplinkService>;
+describe("Watcher", () => {
+  let routerServiceMock: IMock<IRouterService>;
+  let databaseService: IMock<IDatabaseService>;
   let telegramServiceMock: IMock<ITelegramService>;
-  let fileSystemServiceMock: IMock<IFileSystemService>;
 
   let watcher: Watcher;
 
   beforeEach(() => {
-    serverServiceMock = Mock.ofType<IServerService>();
-    tplinkService = Mock.ofType<ITplinkService>();
+    routerServiceMock = Mock.ofType<IRouterService>();
+    databaseService = Mock.ofType<IDatabaseService>();
     telegramServiceMock = Mock.ofType<ITelegramService>();
-    fileSystemServiceMock = Mock.ofType<IFileSystemService>();
 
     const configuration = {
-      currentPath: 'test-path',
-      password: 'test-pass',
+      login: "test-login",
+      password: "test-password",
+      token: "test-token",
+      chatId: 0
     };
 
-    watcher = new Watcher(configuration, serverServiceMock.object, tplinkService.object, telegramServiceMock.object, fileSystemServiceMock.object);
+    watcher = new Watcher(
+      configuration,
+      routerServiceMock.object,
+      databaseService.object,
+      telegramServiceMock.object
+    );
   });
 
   afterEach(() => {
-    serverServiceMock.verifyAll();
-    tplinkService.verifyAll();
+    routerServiceMock.verifyAll();
+    databaseService.verifyAll();
     telegramServiceMock.verifyAll();
-    fileSystemServiceMock.verifyAll();
   });
 
-  it('Should work', async () => {
+  it("Should work", async () => {
     // Arrange
 
     // Act

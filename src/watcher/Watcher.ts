@@ -1,5 +1,5 @@
 import { IWatcher } from "./IWatcher.interface";
-import { ITplinkService } from "../tplink/ITplinkService.interface";
+import { IRouterService } from "../router/IRouterService.interface";
 import { IDatabaseService } from "../database/IDatabaseService.interface";
 
 import { ITelegramService } from "../telegram/ITelegramService.interface";
@@ -8,46 +8,46 @@ import { IWatcherConfiguration } from "../common/model/IWatcherConfiguration.int
 export class Watcher implements IWatcher {
   constructor(
     private configuration: IWatcherConfiguration,
-    private tplinkService: ITplinkService,
+    private routerService: IRouterService,
     private databaseService: IDatabaseService,
     private telegramService: ITelegramService
   ) {}
 
   async start(): Promise<void> {
-    // setInterval(async () => {
-    const newDevices = await this.tplinkService.getDevices();
-    const oldDevices = await this.databaseService.getDevices();
+    setInterval(async () => {
+      const newDevices = await this.routerService.getDevices();
+      const oldDevices = await this.databaseService.getDevices();
 
-    const connectedDevices = this.getConnectedDevices(oldDevices, newDevices);
-    const disconnectedDevices = this.getDisconnectedDevices(
-      oldDevices,
-      newDevices
-    );
-
-    connectedDevices.forEach(async connectedDevice => {
-      const deviceName = await this.databaseService.getDeviceName(
-        connectedDevice
+      const connectedDevices = this.getConnectedDevices(oldDevices, newDevices);
+      const disconnectedDevices = this.getDisconnectedDevices(
+        oldDevices,
+        newDevices
       );
 
-      this.telegramService.sendMessage({
-        text: `${deviceName || connectedDevice} connected`,
-        chatId: this.configuration.chatId
+      connectedDevices.forEach(async connectedDevice => {
+        const deviceName = await this.databaseService.getDeviceName(
+          connectedDevice
+        );
+
+        this.telegramService.sendMessage({
+          text: `${deviceName || connectedDevice} connected`,
+          chatId: this.configuration.chatId
+        });
       });
-    });
 
-    disconnectedDevices.forEach(async disconnectedDevice => {
-      const deviceName = await this.databaseService.getDeviceName(
-        disconnectedDevice
-      );
+      disconnectedDevices.forEach(async disconnectedDevice => {
+        const deviceName = await this.databaseService.getDeviceName(
+          disconnectedDevice
+        );
 
-      this.telegramService.sendMessage({
-        text: `${deviceName || disconnectedDevice} connected`,
-        chatId: this.configuration.chatId
+        this.telegramService.sendMessage({
+          text: `${deviceName || disconnectedDevice} disconnected`,
+          chatId: this.configuration.chatId
+        });
       });
-    });
 
-    await this.databaseService.setDevices(newDevices);
-    // }, 60 * 1000);
+      await this.databaseService.setDevices(newDevices);
+    }, 60 * 1000);
   }
 
   private getConnectedDevices(
