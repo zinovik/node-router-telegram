@@ -14,7 +14,7 @@
     "format": "prettier --write \"src/**/*.ts*\" \"test*/**/*.ts*\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm test",
     "preversion": "npm run lint"
   },
   "engines": {
