@@ -25,7 +25,7 @@ const configuration = {
   password: process.argv[3],
   token: process.argv[4],
   chatId: Number(process.argv[5]),
-  interval: Number(process.argv[6]) || 10 * 1000,
+  interval: Number(process.argv[6]) || 30 * 1000,
 };
 
 const tplinkService = new TplinkService(configuration.login, configuration.password);

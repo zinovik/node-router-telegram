@@ -22,7 +22,7 @@ describe('Watcher', () => {
       password: 'test-password',
       token: 'test-token',
       chatId: 0,
-      interval: 10 * 1000,
+      interval: 30 * 1000,
     };
 
     watcher = new Watcher(configuration, routerServiceMock.object, databaseService.object, telegramServiceMock.object);

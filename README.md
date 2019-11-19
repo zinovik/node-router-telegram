@@ -10,6 +10,6 @@
 - PASSWORD - router password
 - TELEGRAM_TOKEN - telegram bot token (can be get from @botfather)
 - TELEGRAM_CHAT_ID - telegram user id (can be get from @userinfobot)
-- INTERVAL - users check interval (optional, default 10000 ms)
+- INTERVAL - users check interval (optional, default 30000 ms)
 
 Currently tested only with TP-Link TL-WR841N
