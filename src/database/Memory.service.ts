@@ -6,6 +6,7 @@ const DEVICES_ALIASES: { [key: string]: string } = {
   'B8-EE-65-C3-06-75': 'Lena (PC)',
   '50-8F-4C-72-9F-EF': 'Lena (mobile)',
   'BC-8C-CD-8A-EC-6B': 'TV',
+  '5C-CF-7F-87-3B-F0': 'ESP8266',
 };
 
 export class MemoryService implements IDatabaseService {
